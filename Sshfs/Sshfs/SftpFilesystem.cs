@@ -1278,8 +1278,9 @@ namespace Sshfs
                 rights |= FileSystemRights.Traverse;
             }
             security = info.IsDirectory ? new DirectorySecurity() as FileSystemSecurity : new FileSecurity();
-            security.AddAccessRule(new FileSystemAccessRule("Everyone", rights, AccessControlType.Allow));
-            security.AddAccessRule(new FileSystemAccessRule("Everyone", FileSystemRights.FullControl ^ rights,
+            SecurityIdentifier everyone = new SecurityIdentifier(WellKnownSidType.WorldSid, null);
+            security.AddAccessRule(new FileSystemAccessRule(everyone, rights, AccessControlType.Allow));
+            security.AddAccessRule(new FileSystemAccessRule(everyone, FileSystemRights.FullControl ^ rights,
                                                             AccessControlType.Deny));
             //not sure this works at all, needs testing
             // if (sections.HasFlag(AccessControlSections.Owner))
