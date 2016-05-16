@@ -458,8 +458,22 @@ namespace Sshfs
         private void authBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             authLabel.Text = String.Format("{0}:", authCombo.Text);
-            passwordBox.Visible = authCombo.SelectedIndex == 0;
-            privateKeyButton.Visible = passphraseBox.Visible = privateKeyBox.Visible = authCombo.SelectedIndex == 1;
+            switch (authCombo.SelectedIndex)
+            {
+                case 0:
+                    passwordBox.Visible = true;
+                    privateKeyButton.Visible = passphraseBox.Visible = privateKeyBox.Visible = false;
+                    break;
+                case 1:
+                    passwordBox.Visible = false;
+                    privateKeyButton.Visible = passphraseBox.Visible = privateKeyBox.Visible = true;
+                    break;
+                case 2:
+                    passwordBox.Visible = false;
+                    passphraseBox.Visible = false;
+                    privateKeyButton.Visible = privateKeyBox.Visible = true;
+                    break;
+            }
         }
 
         private void keyButton_Click(object sender, EventArgs e)

@@ -132,7 +132,7 @@ namespace Sshfs
             switch (ConnectionType)
             {
                 case ConnectionType.Pageant:
-                    var agent = new PageantProtocol();
+                    var agent = new PageantProtocolWithKeyFile(PrivateKey);
                     if (pt == ProxyTypes.None)
                     {
                         info = new AgentConnectionInfo(Host, Port, Username, agent);

@@ -5,6 +5,7 @@ using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using Renci.SshNet.Common;
 
 namespace Renci.SshNet.Pageant
@@ -177,4 +178,53 @@ namespace Renci.SshNet.Pageant
 
         #endregion
     }
+
+
+   public class PageantProtocolWithKeyFile : IAgentProtocol
+   {
+       private byte[] pubkey_blob;
+       private IAgentProtocol proto = new PageantProtocol();
+
+       public PageantProtocolWithKeyFile(string keyfile)
+       {
+           List<string> items = new List<string>();
+           using (StreamReader sr = new StreamReader(keyfile))
+           {
+               string line = string.Empty;
+               do
+               {
+                   line = sr.ReadLine();
+                   if (line != null && line.ToLower().StartsWith("public-lines:"))
+                   {
+                       var num = Int32.Parse(Regex.Match(line, @"\d+").Value);
+                       for (var i = 0; i < num; i++) items.Add(sr.ReadLine());
+                       break;
+                   }
+               } while (line != null);
+           }
+
+           string base64 = String.Join("", items);
+           this.pubkey_blob = Convert.FromBase64String(base64);
+       }
+
+       IEnumerable<IdentityReference> IAgentProtocol.GetIdentities()
+       {
+           foreach (var val in this.proto.GetIdentities())
+           {
+               if (this.pubkey_blob == null || this.pubkey_blob.Length == 0)
+               {
+                   yield return val;
+               }
+               else if (this.pubkey_blob.SequenceEqual(val.Blob))
+               {
+                   yield return val;
+               }
+           }
+       }
+
+       byte[] IAgentProtocol.SignData(IdentityReference identity, byte[] data)
+       {
+           return this.proto.SignData(identity, data);
+       }
+   }
 }
