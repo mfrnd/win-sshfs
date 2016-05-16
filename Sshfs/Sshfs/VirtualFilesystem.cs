@@ -506,6 +506,14 @@ namespace Sshfs
             return NtStatus.Success;
         }
 
+        NtStatus IDokanOperations.FindFilesWithPattern(string fileName, string searchPattern,
+                                                        out System.Collections.Generic.IList<DokanNet.FileInformation> files,
+                                                        DokanNet.DokanFileInfo info)
+        {
+            files = null;
+            return DokanResult.NotImplemented; // Fallback to FindFiles(...)
+        }
+
         NtStatus IDokanOperations.SetFileAttributes(string fileName, FileAttributes attributes, DokanFileInfo info)
         {
             Log("VFS TrySetAttributes:{0}\n{1};", fileName, attributes);
