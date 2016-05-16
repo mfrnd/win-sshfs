@@ -41,7 +41,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>WinSSH4e1-public.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>WinSSH-vive.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -472,7 +472,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Documentation\Renci.SshNet.content" />
-    <None Include="WinSSH4e1-public.snk" />
+    <None Include="WinSSH-vive.snk" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Documentation\SshNet.shfbproj" />

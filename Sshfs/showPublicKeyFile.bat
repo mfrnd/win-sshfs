@@ -1,4 +1,9 @@
-"c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\x64\sn.exe" -p sshfs\WinSSH4e1-public.snk WinSSH4e1.pub
-"c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\x64\sn.exe" -tp WinSSH4e1.pub
+@echo off
+
+set PATH=c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\x64;c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin;%PATH%
+
+sn.exe -p sshfs\WinSSH-vive.snk WinSSH-vive.pub
+sn.exe -tp WinSSH-vive.pub
+
 pause
-del WinSSH4e1.pub
+del WinSSH-vive.pub

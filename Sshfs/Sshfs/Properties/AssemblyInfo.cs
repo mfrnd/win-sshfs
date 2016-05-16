@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WinSshFS 4every1 edition")]
+[assembly: AssemblyTitle("WinSshFS vive edition")]
 [assembly: AssemblyDescription("SFTP Filesystem for Windows ™")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("4every1 s.r.o.")]
-[assembly: AssemblyProduct("WinSshFS Foreveryone edition 1.6.0.7-devel")]
-[assembly: AssemblyCopyright("Copyright © 4every1 s.r.o.")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("WinSshFS vive edition")]
+[assembly: AssemblyCopyright("Copyright 2016, mfnrd")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(true)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f68729eb-03dd-4988-b492-726b9c9f8c44")]
+[assembly: Guid("56e4aad4-521a-418a-bee2-23758b6c52b1")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.6.0.7")]
-[assembly: AssemblyVersion("1.6.0.7")]
-[assembly: AssemblyFileVersion("1.6.0.7")]
+[assembly: AssemblyVersion("1.7.0.1")]
+[assembly: AssemblyFileVersion("1.7.0.1")]

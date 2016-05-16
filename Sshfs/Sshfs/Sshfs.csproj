@@ -14,28 +14,28 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>w:\dev\default\public\dev\winsshfs\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>W:\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://dev.4e1.cz/winsshfs/</InstallUrl>
-    <UpdateUrl>http://dev.4e1.cz/winsshfs/</UpdateUrl>
-    <TargetCulture>cs</TargetCulture>
-    <ProductName>WinSshFS 4every1 edition</ProductName>
-    <PublisherName>4every1 s.r.o.</PublisherName>
+    <SupportUrl>https://github.com/mfrnd/win-sshfs</SupportUrl>
+    <ErrorReportUrl>https://github.com/mfrnd/win-sshfs/issues</ErrorReportUrl>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>WinSshFS vive</ProductName>
+    <PublisherName>mfrnd</PublisherName>
     <SuiteName>WinSshFS</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>9</ApplicationRevision>
-    <ApplicationVersion>1.5.12.9</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.7.0.1</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -76,7 +76,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>WinSSH4e1-public.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>WinSSH-vive.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -170,7 +170,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="WinSSH4e1-public.snk" />
+    <None Include="WinSSH-vive.snk" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit-undo.png" />
